@@ -1,0 +1,91 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2rem;
+}
+
+p{
+    font-size: 0.7rem;
+    margin: 0.1rem;
+}
+
+p.title{
+    padding-bottom: 0.2rem;
+}
+
+.banner{ /* Flexbox Container 1*/
+    display:flex;
+    /*border-style: solid;
+    border-width: 0.01em;*/
+    /*margin-top: 2rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 1rem;
+    width: 100%;
+    background-color: rgb(61, 42, 165);
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    min-height: 3rem; */
+}
+
+.navi_logo{ /* Flexbox Container 1 - Box 1*/
+    display:flex;
+    flex-direction:row;
+    font-size: 2rem;
+    /*border-style: solid;
+    border-width: 0.01em;*/
+    align-items:flex-end;
+    /*margin-bottom: 0.5em;*/
+    margin-right: 0.5em;
+}
+
+.navi_links{ /* Flexbox Container 1 - Box 2-4*/
+    display:flex;
+    font-size: 1rem;
+    /*border-style: solid;
+    border-width: 0.01em; */
+    /*height: 2.4rem;
+    width: 5rem; */
+    align-items:flex-end;
+    padding-bottom: 0.2rem;
+    /*padding-top: 0.5rem;*/
+    margin-left: 2rem;
+}
+
+.content{ /* Flexbox Container 2*/
+    display: flex;
+    margin-top: 1rem;
+    /*border-style: solid;
+    border-width: 0.01em; */
+    /*background-color: crimson;
+    /*width: 100%;
+    height: 2rem;   
+    text-align: center; */
+}
+
+.footer{ /* Flexbox Container 3*/
+    display: flex;
+    flex-direction:column;
+    margin-top: 1rem;
+    /*border-style: solid;
+    border-width: 0.01em; */
+    background-color: rgb(173, 140, 140);
+    text-align: left; 
+    }
+
+hr{
+    margin: 0rem;
+    width: 30rem;
+    height: 0.05rem;
+    border-width: 0rem;
+    color: black;
+    background-color: black;
+}
+
+a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+a:hover{
+    color: rgba(90, 90, 90, 0.267);
+    text-decoration: none;
+}

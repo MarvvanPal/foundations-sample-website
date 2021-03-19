@@ -1,0 +1,41 @@
+<!-- This html template will start off all of your other html files/pages -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- the page title will be a varible passed to the render_template() function for each page separately-->
+    <title> {{ page_title }}</title>
+  	<meta charset="utf-8"/>
+    <!-- include the css from the file static/style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+
+  <!-- this headline will appear on all pages. -->
+  <header>
+    <div class="banner">
+      <div class="navi_logo">CODE <p class="title">University of Applied Sciences</p></div>
+      <div class="navi_links"><a class="navi" href="/">Home</a></div>
+      <div class="navi_links"><a class="navi" href="/first-page">Details</a></div>
+      <div class="navi_links"><a class="navi" href="/second-page">Contact</a></div>
+    </div>  
+  </header>
+
+  <!-- This is the part which will be different on each page. 
+       see first-page.html for an example of using it -->
+  <main>
+    <div class="content">
+    {% block content%}
+    {% endblock %}
+  </div>
+  </main>
+
+  <footer>
+    
+    <div class="footer">
+    <hr>
+    <p> Handcrafted with ♥ in Cyberspace </p>
+    <p> Powered by: vscode, flask, github, and gcp</p>
+  </div>
+  </footer>
+  </body>
