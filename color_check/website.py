@@ -21,7 +21,7 @@ def show_color():
     # - if the color doesn't exist, give the user a useful error message.
     # - create a log.txt file which records (logs) the user requests. 
 
-    user_submitted_string = 'blue'
+    user_submitted_string = request.form.get("color")
     color_hex_code = get_color_code(user_submitted_string)
 
     return render_template('color.html', page_title="Show Color",
