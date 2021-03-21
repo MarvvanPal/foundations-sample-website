@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+import logging
 from color_check.controllers.get_color_code import get_color_code
 app = Flask(__name__)
 
@@ -23,10 +24,29 @@ def show_color():
     # - create a log.txt file which records (logs) the user requests. 
 
     user_submitted_string = request.form.get("color")
-    color_hex_code = get_color_code(user_submitted_string)
+    joined_string = user_submitted_string.replace(" ", "")
+    lowercase_string = joined_string.lower()
+
+    # debugging
+    logging.basicConfig(filename='/tmp/logs.txt', filemode='w',
+                        format='%(name)s - %(levelname)s - %(message)s',
+                        level=logging.DEBUG)
+    logging.debug(f"User string: {user_submitted_string}")
+    print(f"User string: {user_submitted_string}")
+
+    try:
+        color_hex_code = get_color_code(lowercase_string)
+
+    except:
+        logging.error("Color not found.")
+        return render_template('error.html', page_title="Error", user_color=user_submitted_string)
+
+    user_submitted_string_capitalized = user_submitted_string.capitalize()
 
     return render_template('color.html', page_title="Show Color",
-                           color_hex_code=color_hex_code)
+                            color_hex_code=color_hex_code, color_name=user_submitted_string_capitalized)
+
+    
 
 
 if __name__ == "__main__":
