@@ -24,8 +24,8 @@ def show_color():
     # - create a log.txt file which records (logs) the user requests. 
 
     user_submitted_string = request.form.get("color")
-    joined_string = user_submitted_string.replace(" ", "")
-    lowercase_string = joined_string.lower()
+    #joined_string = user_submitted_string.replace(" ", "")
+    lowercase_string = user_submitted_string.lower()
 
     # debugging
     logging.basicConfig(filename='/tmp/logs.txt', filemode='w',
