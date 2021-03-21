@@ -1,4 +1,4 @@
-from slask import json
+from flask import json
 # This file should contain a function called get_color_code().
 # This function should take one argument, a color name,
 # and it should return one argument, the hex code of the color,
