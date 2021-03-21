@@ -35,7 +35,7 @@ def show_color():
     print(f"User string: {user_submitted_string}")
 
     #try:
-        color_hex_code = get_color_code(user_submitted_string)
+    color_hex_code = get_color_code(user_submitted_string)
 
     #except:
         #logging.error("Color not found.")
@@ -43,8 +43,7 @@ def show_color():
 
     #user_submitted_string_capitalized = user_submitted_string.capitalize()
 
-    return render_template('color.html', page_title="Show Color",
-                            color_hex_code=color_hex_code)
+    return render_template('color.html', page_title="Show Color", color_hex_code=color_hex_code)
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug=True)
