@@ -1,3 +1,4 @@
+import json
 # This file should contain a function called get_color_code().
 # This function should take one argument, a color name,
 # and it should return one argument, the hex code of the color,
@@ -5,7 +6,6 @@
 # raise and handle an error that helps both you as a developer,
 # for example by logging the request and error, and the user,
 # letting them know that their color doesn't exist.
-
 def get_color_code(color_name):
 
     with open('color_check/data/css-color-names.json', "r") as data:
@@ -18,6 +18,6 @@ def get_color_code(color_name):
     # Open the file at data/css-color-names.json, and return the hex code
     # The file can be considered as JSON format, or as a Python dictionary.
 
-    hex_code= dictionary.get(color_name,"no")
+    hex_code = dictionary.get(color_name, "no")
 
     return hex_code
