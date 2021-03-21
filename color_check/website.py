@@ -25,7 +25,7 @@ def show_color():
 
     user_submitted_string = request.form.get("color")
     #joined_string = user_submitted_string.replace(" ", "")
-    lowercase_string = user_submitted_string.lower()
+    #lowercase_string = user_submitted_string.lower()
 
     # debugging
     logging.basicConfig(filename='/tmp/logs.txt', filemode='w',
@@ -35,16 +35,16 @@ def show_color():
     print(f"User string: {user_submitted_string}")
 
     try:
-        color_hex_code = get_color_code(lowercase_string)
+        color_hex_code = get_color_code(user_submitted_string)
 
     except:
         logging.error("Color not found.")
         return render_template('error.html', page_title="Error", user_color=user_submitted_string)
 
-    user_submitted_string_capitalized = user_submitted_string.capitalize()
+    #user_submitted_string_capitalized = user_submitted_string.capitalize()
 
     return render_template('color.html', page_title="Show Color",
-                            color_hex_code=color_hex_code, color_name=user_submitted_string_capitalized)
+                            color_hex_code=color_hex_code)
 
     
 
